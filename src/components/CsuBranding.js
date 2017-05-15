@@ -2,7 +2,7 @@ import React, {
   Component
 } from 'react';
 import $ from 'jquery';
-import config from './config.json';
+import config from '../config.json';
 
 export default class CsuSvgLogo extends Component {
   componentDidMount() {

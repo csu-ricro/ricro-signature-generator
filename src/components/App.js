@@ -10,23 +10,16 @@ import {
 } from 'material-ui/Toolbar';
 
 import CsuSvgLogo from './CsuBranding';
+import InputForm from '../containers/InputForm';
+import OutputSignature from '../containers/OutputSignature';
 
-import config from './config.json';
+import config from '../config.json';
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 document.title = document.title === '' ? config.appName + ' - ' + config.unitTitle : document.title;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 3,
-    };
-  }
-  handleChange = (event, index, value) => this.setState({
-    value
-  });
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(config.muiTheme)}>
@@ -37,7 +30,14 @@ class App extends Component {
             <ToolbarTitle text={config.appName} />
           </Toolbar>
           <div id="main-content">
-            <h2 className='text-center'>#main-content</h2>
+            <div className='row'>
+              <div className='col-md-7'>
+                <InputForm />
+              </div>
+              <div className='col-md-5'>
+                <OutputSignature />
+              </div>
+            </div>
           </div>
         </div>
       </MuiThemeProvider>
