@@ -31,32 +31,33 @@ const InputForm = (props) => {
     phone = props.phone;
   }
   const style = {
-    textStyle: {
+    text: {
       fontFamily: '\'Helvetica\',sans-serif',
       color: '#59595B',
       padding: '0 0 0 1.65em',
       fontSize: '.85em'
     },
-    imgStyle: {
-      margin: '-1em 0 0 0'
+    img: {
+      height: config.img.height + 'px',
+      width: config.img.width + 'px'
     }
   }
   return (
     <Paper
       zDepth={3} >
       <br/>
-      <p style={style.textStyle}>
+      <p style={style.text}>
         {name}
         {title !== '' ? ', ' + title : null}
       </p>
-      <p style={style.textStyle}>
+      <p style={style.text}>
          {position.map((position, i)=>{
            return <span key={i}>{i > 0 ? <br/> : null}{position}</span>;
          })}
          <br/>
          <strong>{unit.name}</strong>
       </p>
-      <p style={style.textStyle}>
+      <p style={style.text}>
          {unit.campusDelivery} Campus Delivery | Fort Collins, CO 80523-{unit.campusDelivery}
          <br/>
          {unit.physicalAddress} | Colorado State University
@@ -65,7 +66,12 @@ const InputForm = (props) => {
          {phone !== '' ? ' | Direct: '+beautifyPhoneNumber(phone) : null}
       </p>
       <a href={unit.website}>
-        <img src={config.unitsBaseUrl+unit.imgUrl} alt={unit.name} />
+        <img
+          style={style.img}
+          width={config.img.width}
+          height={config.img.height}
+          src={config.unitsBaseUrl+unit.imgUrl}
+          alt={unit.name} />
       </a>
     </Paper>
   );
