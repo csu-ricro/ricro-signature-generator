@@ -4,7 +4,7 @@ import Paper from 'material-ui/Paper';
 import config from '../config.json';
 
 const beautifyPhoneNumber = (number) => {
-  number = number.toString().replace(/\D/g, '');
+  number = number.toString();
   if (number.length > 10) {
     return number[0] + ' (' + number.substring(1, 4) + ') ' +
       number.substring(4, 7) + '-' + number.substring(7, 11);
@@ -28,7 +28,7 @@ const InputForm = (props) => {
     name = props.name;
     title = props.title;
     position = props.position.split('\n');
-    phone = props.phone;
+    phone = props.phone.toString().replace(/\D/g, '');
   }
   const style = {
     text: {
