@@ -1,26 +1,19 @@
-import React, {
-  Component
-} from 'react';
-import AppContainer from '../csu-app-template/AppContainer';
-import InputForm from '../containers/InputForm';
-import OutputSignature from '../containers/OutputSignature';
+import AppFrame, { createConfig } from 'colostate-ricro-ui';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import config from '../assets/config';
+import Page from '../Page';
+import Output from './Output';
+import Reducers from '../reducers';
 
-import config from '../config.json';
+const routes = [{ path: '/', component: Page }];
 
-class App extends Component {
-  render() {
-    return (
-      <AppContainer config={config}>
-          <div className='row'>
-            <div className='col-md-7'>
-              <InputForm />
-            </div>
-            <div className='col-md-5'>
-              <OutputSignature />
-            </div>
-          </div>
-      </AppContainer>
-    );
-  }
-}
+const App = () => (
+  <AppFrame reducers={Reducers} config={createConfig(config)}>
+    {routes.map(route => (
+      <Route component={route.component} exact key={route.path} path={route.path} />
+    ))}
+  </AppFrame>
+);
+
 export default App;
