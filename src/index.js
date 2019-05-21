@@ -1,32 +1,24 @@
+import AppFrame, { createConfig } from 'colostate-ricro-ui';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {
-  Provider
-} from 'react-redux';
-import {
-  createStore
-} from 'redux';
+import { Route } from 'react-router-dom';
+import config from './assets/config';
+import IndexPage from './Page';
+import Reducers from './reducers';
+import * as serviceWorker from './serviceWorker';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
-import App from './components/App';
-import reducer from './reducers';
-import config from './config.json';
-
-const store = createStore(
-  reducer,
-  config.defaults,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const routes = [{ path: '/', component: IndexPage }];
 
 ReactDOM.render(
-  <Provider store={store}>
-    <MuiThemeProvider muiTheme={getMuiTheme(config.muiTheme)}>
-      <App />
-    </MuiThemeProvider>
-  </Provider>,
-  document.getElementById('root')
+  <AppFrame reducers={Reducers} config={createConfig(config)}>
+    {routes.map(route => (
+      <Route component={route.component} exact key={route.path} path={route.path} />
+    ))}
+  </AppFrame>,
+  document.getElementById('root'),
 );
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+serviceWorker.unregister();

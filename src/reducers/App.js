@@ -3,31 +3,31 @@ const App = (state = {}, action) => {
     case 'UPDATE_NAME':
       return {
         ...state,
-        name: action.name
+        name: action.name,
       };
     case 'UPDATE_TITLE':
       return {
         ...state,
-        title: action.title
+        title: action.title,
       };
     case 'UPDATE_UNIT_ID':
       return {
         ...state,
-        unitId: action.unitId
+        unitId: action.unitId,
       };
     case 'UPDATE_POSITION':
       return {
         ...state,
-        position: action.position
+        position: action.position,
       };
     case 'UPDATE_PHONE':
       return {
         ...state,
-        phone: action.phone
+        phone: action.phone,
       };
     default:
       return state;
   }
-}
+};
 
 export default App;

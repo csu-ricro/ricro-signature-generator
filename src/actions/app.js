@@ -1,34 +1,34 @@
-export const updateName = (name) => {
+export const updateName = name => {
   return {
     type: 'UPDATE_NAME',
-    name
-  }
-}
+    name,
+  };
+};
 
-export const updateTitle = (title) => {
+export const updateTitle = title => {
   return {
     type: 'UPDATE_TITLE',
-    title
-  }
-}
+    title,
+  };
+};
 
-export const updateUnitId = (unitId) => {
+export const updateUnitId = unitId => {
   return {
     type: 'UPDATE_UNIT_ID',
-    unitId
-  }
-}
+    unitId,
+  };
+};
 
-export const updatePosition = (position) => {
+export const updatePosition = position => {
   return {
     type: 'UPDATE_POSITION',
-    position
-  }
-}
+    position,
+  };
+};
 
-export const updatePhone = (phone) => {
+export const updatePhone = phone => {
   return {
     type: 'UPDATE_PHONE',
-    phone
-  }
-}
+    phone,
+  };
+};
