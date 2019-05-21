@@ -1,51 +1,29 @@
-/* eslint-disable linebreak-style */
+import Grid from '@material-ui/core/Grid';
+import withStyles from '@material-ui/core/styles/withStyles';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Input from '../components/Input';
 import Output from '../components/Output';
-import withStyles from '@material-ui/core/styles/withStyles';
-import OutputHTML from '../components/OutputHTML';
+import OutputHTML from '../components/OutputHtml';
 
-const styles = () => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    height: '100%',
-  },
-  input: {
-    
-    width: '60%',
-    minWidth: '200px',
-  },
-  output: {
-    
-    minWidth: 500,
-    maxWidth: 1000,
-    
-  },
-  row: {
-    display: 'flex',
-    flexDirection: 'row',
-  }
+const styles = theme => ({
+  gridItem: { padding: `0 ${theme.spacing.unit * 2}px` },
 });
 
+const IndexPage = ({ classes }) => (
+  <Grid container>
+    <Grid className={classes.gridItem} item xs={12} md={6}>
+      <Input />
+    </Grid>
+    <Grid className={classes.gridItem} item xs={12} md={6}>
+      <Output />
+    </Grid>
+    <OutputHTML />
+  </Grid>
+);
 
-class App extends React.Component {
-  state = {};
-  
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className={classes.row}>
-        <div className={classes.input}>
-          <Input />
-        </div>
-        <div className={classes.output}>
-          <Output />
-          <OutputHTML/>
-        </div>
-      </div>
-    );
-  }
-}
-export default withStyles(styles)(App);
+IndexPage.propTypes = {
+  classes: PropTypes.object.isRequired, // MUI withStyles()
+};
+
+export default withStyles(styles)(IndexPage);

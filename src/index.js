@@ -1,9 +1,22 @@
+import AppFrame, { createConfig } from 'colostate-ricro-ui';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route } from 'react-router-dom';
+import config from './assets/config';
+import IndexPage from './Page';
+import Reducers from './reducers';
 import * as serviceWorker from './serviceWorker';
-import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const routes = [{ path: '/', component: IndexPage }];
+
+ReactDOM.render(
+  <AppFrame reducers={Reducers} config={createConfig(config)}>
+    {routes.map(route => (
+      <Route component={route.component} exact key={route.path} path={route.path} />
+    ))}
+  </AppFrame>,
+  document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
