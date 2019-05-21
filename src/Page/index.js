@@ -17,8 +17,8 @@ const IndexPage = ({ classes }) => (
     </Grid>
     <Grid className={classes.gridItem} item xs={12} md={6}>
       <Output />
-    </Grid>
     <OutputHTML />
+    </Grid>
   </Grid>
 );
 

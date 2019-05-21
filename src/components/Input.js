@@ -14,15 +14,15 @@ class Input extends React.Component {
     this.props.handleUpdateTitle(event.target.value);
   };
 
-  handleUnitIdChange = (event, index, unitId) => {
+  handleUnitIdChange = (event) => {
     this.props.handleUpdateUnitId(event.target.value);
   };
 
-  handlePositionChange = (event, position) => {
+  handlePositionChange = (event) => {
     this.props.handleUpdatePosition(event.target.value);
   };
 
-  handlePhoneChange = (event, phone) => {
+  handlePhoneChange = (event) => {
     this.props.handleUpdatePhone(event.target.value);
   };
 
@@ -82,7 +82,11 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
+  handleUpdateName: PropTypes.func.isRequired,
   handleUpdatePhone: PropTypes.func.isRequired,
+  handleUpdatePosition: PropTypes.func.isRequired,
+  handleUpdateTitle: PropTypes.func.isRequired,
+  handleUpdateUnitId: PropTypes.func.isRequired,
   name: PropTypes.string,
   title: PropTypes.string,
   unitId: PropTypes.string,

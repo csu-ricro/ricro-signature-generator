@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
+import beautifyPhoneNumber from '../../utils/beautifyPhoneNumber';
 // eslint-disable-next-line max-lines-per-function
-export default ({ phone, position }) =>
+export default ({ phone, position, name, title, unit }) =>
   `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,7 +25,7 @@ export default ({ phone, position }) =>
                     <table class="spacer" style="border-collapse:collapse;border-spacing:0;padding:0;text-align:left;vertical-align:top;width:100%">
                       <tbody>
                         <tr style="padding:0;text-align:left;vertical-align:top">
-                          <td height="16px" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:Roboto,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">&amp;nbsp;</td>
+                          <td height="16px" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:Roboto,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:16px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">&nbsp;</td>
                         </tr>
                       </tbody>
                     </table>
@@ -32,16 +33,16 @@ export default ({ phone, position }) =>
                       <tbody>
                         <tr style="padding:0;text-align:left;vertical-align:top">
                           <td style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:Roboto,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:auto;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:break-word">
-                            <p class="ricro-sg__user" style="Margin:0;Margin-bottom:10px;color:#59595b;font-family:Roboto,Arial,sans-serif;font-size:1em;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;margin-left:38px;padding:0;text-align:left">John Doe, Ph.D.</p>
+                            <p class="ricro-sg__user" style="Margin:0;Margin-bottom:10px;color:#59595b;font-family:Roboto,Arial,sans-serif;font-size:1em;font-weight:700;line-height:1.3;margin:0;margin-bottom:10px;margin-left:38px;padding:0;text-align:left">${name}${title !== '' ? `, ${title}` : ''}</p>
                             <p style="Margin:0;Margin-bottom:10px;color:#59595b;font-family:Roboto,Arial,sans-serif;font-size:.8em;font-weight:400;line-height:1.3;margin:0;margin-bottom:10px;margin-left:38px;padding:0;text-align:left">
                               ${position.replace('\n', '<br/>\n')}
                               <br/>
-                              <span class="ricro-sg__unit-name" style="font-weight:700">Research Integrity &amp;amp; Compliance Review Office</span>
+                              <span class="ricro-sg__unit-name" style="font-weight:700">Research Integrity & Compliance Review Office</span>
                             </p>
                             <p style="Margin:0;Margin-bottom:10px;color:#59595b;font-family:Roboto,Arial,sans-serif;font-size:.8em;font-weight:400;line-height:1.3;margin:0;margin-bottom:10px;margin-left:38px;padding:0;text-align:left">
-                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">2011 Campus Delivery</span> Fort Collins, CO 80523-2011<br>
-                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">208 University Services Center</span> Colorado State University<br>
-                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">Office: (970) 491-1553</span>${phone}
+                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">${unit.campusDelivery} Campus Delivery</span> Fort Collins, CO 80523-2011<br>
+                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">${unit.physicalAddress}</span> Colorado State University<br>
+                              <span class="ricro-sg__divider" style="border-right:2px solid #8a8a8a;padding-right:5px">Office: ${beautifyPhoneNumber(unit.officePhone)}</span>${phone}
                             </p>
                           </td>
                         </tr>
@@ -59,8 +60,8 @@ export default ({ phone, position }) =>
                                       <tbody>
                                         <tr style="padding:0;text-align:left;vertical-align:top">
                                           <th style="Margin:0;color:#0a0a0a;font-family:Roboto,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left">
-                                            <a href="http://ricro.colostate.edu" style="Margin:0;color:#1e4d2b;font-family:Roboto,Arial,sans-serif;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:underline">
-                                              <img src="https://services.ricro.colostate.edu/_external/signatures/ResInt-VPR-CSU-2-H357-96.png" alt="Research Integrity and Compliance Review Office at Colorado State University" style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
+                                            <a href="${unit.website}" style="Margin:0;color:#1e4d2b;font-family:Roboto,Arial,sans-serif;font-weight:400;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:underline">
+                                              <img src="${unit.imgUrl}" alt="${unit.name}" style="-ms-interpolation-mode:bicubic;border:none;clear:both;display:block;max-width:100%;outline:0;text-decoration:none;width:auto">
                                             </a>
                                           </th>
                                           <th class="expander" style="Margin:0;color:#0a0a0a;font-family:Roboto,Arial,sans-serif;font-size:16px;font-weight:400;line-height:1.3;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0">
@@ -86,6 +87,6 @@ export default ({ phone, position }) =>
       </tr>
     </tbody>
   </table>
-  <div style="display:none;white-space:nowrap;font:15px courier;line-height:0">&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;</div>
+  <div style="display:none;white-space:nowrap;font:15px courier;line-height:0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
 </body>
 </html>`;

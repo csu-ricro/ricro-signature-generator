@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import units from '../assets/units';
+import beautifyPhoneNumber from '../utils/beautifyPhoneNumber';
 
 const style = {
   text: {
@@ -12,24 +13,6 @@ const style = {
     fontSize: '.85em',
   },
 };
-
-const beautifyPhoneNumber = number => {
-  if (number) {
-    number = number.toString();
-    if (number.length > 10) {
-      return `${number[0]} (${number.substring(1, 4)}) ${number.substring(4, 7)}-${number.substring(
-        7,
-        11,
-      )}`;
-    }
-    if (number.length > 7) {
-      return `(${number.substring(0, 3)}) ${number.substring(3, 6)}-${number.substring(6, 10)}`;
-    }
-    return `${number.substring(0, 3)}-${number.substring(3, 7)}`;
-  }
-  number = 0;
-};
-const unitsBaseUrl = 'https://services.ricro.colostate.edu/_external/signatures/';
 
 const OutputForm = props => {
   const { name, title, unitId, phone, position } = props;
@@ -66,7 +49,7 @@ const OutputForm = props => {
         {phoneFormatted}
       </p>
       <a href={unit.website}>
-        <img src={unitsBaseUrl + unit.imgUrl} alt={unit.name} />
+        <img src={unit.imgUrl} alt={unit.name} />
       </a>
     </Paper>
   );
