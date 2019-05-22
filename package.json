@@ -33,7 +33,6 @@
   },
   "author": "RICRO",
   "description": "App template built with colostate-ricro-scripts/cru-create-app",
-  "homepage": "/",
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-babel": "^5.3.0",
