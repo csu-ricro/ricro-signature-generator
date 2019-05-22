@@ -14,15 +14,15 @@ class Input extends React.Component {
     this.props.handleUpdateTitle(event.target.value);
   };
 
-  handleUnitIdChange = (event) => {
+  handleUnitIdChange = event => {
     this.props.handleUpdateUnitId(event.target.value);
   };
 
-  handlePositionChange = (event) => {
+  handlePositionChange = event => {
     this.props.handleUpdatePosition(event.target.value);
   };
 
-  handlePhoneChange = (event) => {
+  handlePhoneChange = event => {
     this.props.handleUpdatePhone(event.target.value);
   };
 
@@ -56,7 +56,6 @@ class Input extends React.Component {
           value={unitId}
           onChange={this.handleUnitIdChange}
         >
-          <MenuItem value="empty">Test empty</MenuItem>
           <MenuItem value="ricro">Research Integrity & Compliance Review Office</MenuItem>
         </TextField>
         <TextField
@@ -75,6 +74,7 @@ class Input extends React.Component {
           onChange={this.handlePhoneChange}
           fullWidth
           label="Direct Phone"
+          inputProps={{ maxLength: 11 }}
         />
       </React.Fragment>
     );
