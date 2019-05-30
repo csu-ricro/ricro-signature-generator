@@ -1,9 +1,9 @@
 {
   "name": "ricro-signature-generator",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "homepage": "/internal/email-signature-generator",
   "dependencies": {
-    "colostate-ricro-ui": "^3.5.4",
+    "colostate-ricro-ui": "^3.5.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
