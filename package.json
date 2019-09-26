@@ -1,7 +1,7 @@
 {
   "name": "ricro-signature-generator",
-  "version": "2.0.3",
-  "homepage": "/internal/email-signature-generator",
+  "version": "2.0.4",
+  "homepage": "/apps/internal/email-signature-generator",
   "dependencies": {
     "colostate-ricro-ui": "^3.5.5",
     "react": "^16.8.6",
@@ -11,7 +11,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "eslint \"src/**/*.js\" --fix"
