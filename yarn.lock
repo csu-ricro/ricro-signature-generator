@@ -2584,7 +2584,7 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-colostate-ricro-ui@^3.5.8:
+colostate-ricro-ui@^3.5.5:
   version "3.5.8"
   resolved "https://registry.yarnpkg.com/colostate-ricro-ui/-/colostate-ricro-ui-3.5.8.tgz#0456acffa9f1c8e10ffdfe06d1942b1b50c84c42"
   integrity sha512-uhnu10/lZ9JAfpR8GZDNCeVss0qDjcqd17GLfkMbFK0iyqw5F4XvdVUirwM6V5S2E244jgrC20iK9PMjL2/0kA==
@@ -6399,9 +6399,9 @@ memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
     readable-stream "^2.0.1"
 
 merge-deep@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
-  integrity sha512-T7qC8kg4Zoti1cFd8Cr0M+qaZfOwjlPDEdZIIPPB2JZctjaPM4fX+i7HOId69tAti2fvO6X5ldfYUONDODsrkA==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
+  integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
   dependencies:
     arr-union "^3.1.0"
     clone-deep "^0.2.4"
