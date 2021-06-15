@@ -2584,7 +2584,7 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-colostate-ricro-ui@^3.5.8:
+colostate-ricro-ui@^3.5.5:
   version "3.5.8"
   resolved "https://registry.yarnpkg.com/colostate-ricro-ui/-/colostate-ricro-ui-3.5.8.tgz#0456acffa9f1c8e10ffdfe06d1942b1b50c84c42"
   integrity sha512-uhnu10/lZ9JAfpR8GZDNCeVss0qDjcqd17GLfkMbFK0iyqw5F4XvdVUirwM6V5S2E244jgrC20iK9PMjL2/0kA==
@@ -8046,9 +8046,9 @@ postcss-values-parser@^2.0.0, postcss-values-parser@^2.0.1:
     uniq "^1.0.1"
 
 postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.5, postcss@^7.0.6:
-  version "7.0.14"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
-  integrity sha512-NsbD6XUUMZvBxtQAJuWDJeeC4QFsmWsfozWxCJPWf3M55K9iu2iMDaKqyoOdTJ1R4usBXuxlVFAIo8rZPQD4Bg==
+  version "7.0.36"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
+  integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
